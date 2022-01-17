@@ -1,6 +1,12 @@
-Tic Tac Toe application built with React!
+# Tic-Tac-Toe
+
+Simple tic-tac-toe application built with React and styled with SCSS.
+
+&nbsp;
 
 <img src="./src/logo.png" width="200" height="200" />
+
+&nbsp;
 
 # Getting Started with Create React App
 
