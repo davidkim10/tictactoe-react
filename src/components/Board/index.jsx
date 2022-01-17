@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { Modal } from '../Modal';
+import { INITIAL_BOARD_STATE, WINNING_COMBINATIONS } from '../../utils';
 import { BoardHeader } from '../BoardHeader';
 import { BoardItem } from '../BoardItem';
-import { INITIAL_BOARD_STATE, WINNING_COMBINATIONS } from '../../utils';
+import { Modal } from '../Modal';
 import './board.scss';
 
 export const Board = () => {
