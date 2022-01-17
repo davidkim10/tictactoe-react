@@ -1,0 +1,95 @@
+$item-size: 120px;
+$item-x-color: #1976d2;
+$item-o-color: #fbc02d;
+
+.board-item {
+  align-items: center;
+  height: $item-size;
+  width: $item-size;
+  border: solid 2px white;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  cursor: pointer;
+}
+
+.board-item:first-child,
+.board-item:nth-child(2),
+.board-item:nth-child(3) {
+  border-top: none;
+}
+
+.board-item:nth-child(3n + 1) {
+  border-left: none;
+}
+
+.board-item:nth-child(3n + 3) {
+  border-right: none;
+}
+
+.board-item:last-child,
+.board-item:nth-child(8),
+.board-item:nth-child(7) {
+  border-bottom: none;
+}
+
+// Markers
+.board-item.isSelected {
+  cursor: not-allowed;
+}
+
+.board-item.x::before,
+.board-item.x::after {
+  background-color: $item-x-color;
+}
+
+.board-item.o::before,
+.board-item.o::after {
+  background-color: $item-o-color;
+}
+
+.board.x .board-item:not(.isSelected):hover::before,
+.board.x .board-item:not(.isSelected):hover::after,
+.board.o .board-item:not(.isSelected):hover::before,
+.board.o .board-item:not(.isSelected):hover::after {
+  background-color: #d3d3d3;
+}
+
+.board-item.x::before,
+.board-item.x::after,
+.board.x .board-item:not(.isSelected):hover::before,
+.board.x .board-item:not(.isSelected):hover::after {
+  content: '';
+  height: $item-size;
+  position: absolute;
+  width: $item-size * 0.15;
+}
+
+.board-item.x::before,
+.board.x .board-item:not(.isSelected):hover::before {
+  transform: rotate(45deg);
+}
+
+.board-item.x::after,
+.board.x .board-item:not(.isSelected):hover::after {
+  transform: rotate(-45deg);
+}
+
+/* o marker */
+.board-item.o::before,
+.board-item.o::after,
+.board.o .board-item:not(.isSelected):hover::before,
+.board.o .board-item:not(.isSelected):hover::after {
+  content: '';
+  width: $item-size * 0.8;
+  height: $item-size * 0.8;
+  border-radius: 50%;
+  position: absolute;
+}
+
+.board-item.o::after,
+.board.o .board-item:not(.isSelected):hover::after {
+  width: $item-size * 0.6;
+  height: $item-size * 0.6;
+  background-color: #282c34;
+}
