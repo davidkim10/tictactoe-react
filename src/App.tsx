@@ -1,3 +1,6 @@
+/* eslint-disable spaced-comment */
+/// <reference types="react-scripts" />
+
 import React from 'react';
 import { Board } from './components';
 import { Routes, Route, Link } from 'react-router-dom';
@@ -16,7 +19,7 @@ const Home = () => {
   );
 };
 
-function App() {
+export const App = () => {
   return (
     <div className="App">
       <Routes>
@@ -25,6 +28,4 @@ function App() {
       </Routes>
     </div>
   );
-}
-
-export default App;
+};

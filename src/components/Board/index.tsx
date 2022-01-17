@@ -5,8 +5,15 @@ import { BoardItem } from '../BoardItem';
 import { Modal } from '../Modal';
 import './board.scss';
 
+interface BoardItemDataType {
+  index: number;
+  isSelected: boolean;
+  value: string;
+}
+
 export const Board = () => {
-  const [boardItems, setBoardItems] = useState(INITIAL_BOARD_STATE);
+  const [boardItems, setBoardItems] =
+    useState<BoardItemDataType[]>(INITIAL_BOARD_STATE);
   const [hasFirstMove, setFirstMove] = useState(false);
   const [isGameOver, setGameOver] = useState(false);
   const [isPlayerXTurn, setPlayerXTurn] = useState(true);
@@ -15,13 +22,13 @@ export const Board = () => {
   const getAllSelectedItems = () =>
     boardItems.filter((item) => !!item.isSelected).map((item) => item.index);
 
-  const getPlayerIndexes = (player) => {
+  const getPlayerIndexes = (player: 'x' | 'o') => {
     return boardItems
       .filter(({ value }) => value === player)
       .map(({ index }) => index);
   };
 
-  const checkWin = (playerSelectedIndexes) => {
+  const checkWin = (playerSelectedIndexes: number[]): boolean => {
     return WINNING_COMBINATIONS.some((combination) =>
       combination.every((comboIndex) =>
         playerSelectedIndexes.includes(comboIndex)
@@ -35,7 +42,7 @@ export const Board = () => {
     setPlayerXTurn(true);
   };
 
-  const onBoardItemClick = (boardItem) => {
+  const onBoardItemClick = (boardItem: BoardItemDataType) => {
     setFirstMove(true);
     const { index } = boardItem;
     const isAlreadySelected = getAllSelectedItems().includes(index);

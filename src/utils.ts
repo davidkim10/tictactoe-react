@@ -2,47 +2,47 @@ export const INITIAL_BOARD_STATE = [
   {
     index: 0,
     isSelected: false,
-    value: null,
+    value: '',
   },
   {
     index: 1,
     isSelected: false,
-    value: null,
+    value: '',
   },
   {
     index: 2,
     isSelected: false,
-    value: null,
+    value: '',
   },
   {
     index: 3,
     isSelected: false,
-    value: null,
+    value: '',
   },
   {
     index: 4,
     isSelected: false,
-    value: null,
+    value: '',
   },
   {
     index: 5,
     isSelected: false,
-    value: null,
+    value: '',
   },
   {
     index: 6,
     isSelected: false,
-    value: null,
+    value: '',
   },
   {
     index: 7,
     isSelected: false,
-    value: null,
+    value: '',
   },
   {
     index: 8,
     isSelected: false,
-    value: null,
+    value: '',
   },
 ];
 

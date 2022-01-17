@@ -1,8 +1,14 @@
 import React from 'react';
 import './modal.scss';
 
-export const Modal = ({
-  isVisible,
+interface IModal {
+  isVisible: boolean;
+  title: string;
+  onResetGame: React.MouseEventHandler<HTMLButtonElement>;
+}
+
+export const Modal: React.FC<IModal> = ({
+  isVisible = false,
   title = 'Thanks for playing!',
   onResetGame,
 }) => {
