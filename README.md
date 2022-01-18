@@ -1,6 +1,6 @@
 # Tic-Tac-Toe
 
-Simple tic-tac-toe application built with React and styled with SCSS.
+React Tic-Tac-Toe application built with Typescript and styled with SCSS.
 
 &nbsp;
 
