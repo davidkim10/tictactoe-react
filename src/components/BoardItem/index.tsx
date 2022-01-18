@@ -4,7 +4,7 @@ import './boardItem.scss';
 interface IBoardItem {
   className?: string;
   isSelected: boolean;
-  onClick: React.MouseEventHandler<HTMLAnchorElement>;
+  onClick: React.MouseEventHandler<HTMLButtonElement>;
 }
 
 export const BoardItem: React.FC<IBoardItem> = ({
@@ -12,9 +12,9 @@ export const BoardItem: React.FC<IBoardItem> = ({
   onClick,
   isSelected,
 }) => {
-  const classNames = ['board-item', isSelected && 'isSelected', className]
+  const classNames = ['board-item-btn', isSelected && 'isSelected', className]
     .filter(Boolean)
     .join(' ');
 
-  return <a className={classNames} onClick={onClick}></a>;
+  return <button className={classNames} onClick={onClick}></button>;
 };
